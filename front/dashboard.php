@@ -281,7 +281,7 @@ if (empty($userInitials)) {
         </div>
 
         <!-- SLA Section -->
-        <div class="page-section" id="slaSection">
+        <!-- <div class="page-section" id="slaSection">
             <header class="page-header">
                 <div class="page-title-wrapper">
                     <h1>Monitor de SLA</h1>
@@ -319,7 +319,7 @@ if (empty($userInitials)) {
                 <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; padding: 0 24px;">Chamados Próximos ao Vencimento</h3>
                 <div class="sla-widget" id="slaList" style="padding: 0 24px 24px;"></div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Ranking Section -->
         <div class="page-section" id="rankingSection">
