@@ -71,9 +71,9 @@ if (empty($userInitials)) {
                 <i class="fas fa-th-large"></i>
                 <span>Visão Geral</span>
             </a>
-            <a href="#" class="menu-link" onclick="showPage('sla', this)">
+            <!-- <a href="#" class="menu-link" onclick="showPage('sla', this)">
                 <i class="fas fa-clock"></i>
-                <span>Monitor SLA</span>
+                <span>Monitor SLA</span> -->
             </a>
             <a href="#" class="menu-link" onclick="showPage('ranking', this)">
                 <i class="fas fa-trophy"></i>
