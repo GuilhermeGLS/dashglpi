@@ -19,7 +19,7 @@ function plugin_version_dashglpi()
     return [
         'name'         => 'Dashboard GLPI Pro',
         'version'      => PLUGIN_DASHGLPI_VERSION,
-        'author'       => 'Diogo Berlanda',
+        'author'       => 'Diogo Berlanda e Guilherme Lima',
         'license'      => 'GPLv3+',
         'homepage'     => 'https://github.com/diberlanda95/dashglpi',
         'requirements' => [
@@ -41,8 +41,15 @@ function plugin_init_dashglpi()
     $PLUGIN_HOOKS['csrf_compliant']['dashglpi'] = true;
 
     if (Session::getLoginUserID()) {
-        // Menu
-        $PLUGIN_HOOKS['redefine_menus']['dashglpi'] = 'plugin_dashglpi_redefine_menus';
+        // Restringe o menu apenas ao perfil T.I (ID 14)
+        if (isset($_SESSION['glpiactiveprofile']['id']) && $_SESSION['glpiactiveprofile']['id'] == 14) {
+            // Menu
+            $PLUGIN_HOOKS['redefine_menus']['dashglpi'] = 'plugin_dashglpi_redefine_menus';
+            // JS mínimo: força o link do menu a abrir em nova aba
+            $PLUGIN_HOOKS['add_javascript']['dashglpi'] = 'js/menu.js';
+        }
+    }
+}
 
         // JS mínimo: força o link do menu a abrir em nova aba
         $PLUGIN_HOOKS['add_javascript']['dashglpi'] = 'js/menu.js';
