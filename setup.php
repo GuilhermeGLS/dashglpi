@@ -2,7 +2,7 @@
 /**
  * Plugin DashGLPI - Dashboard avançado para GLPI
  *
- * @author  Diogo Berlanda
+ * @author  Guilherme Lima
  * @license GPLv3+
  */
 
@@ -18,9 +18,9 @@ function plugin_version_dashglpi()
     return [
         'name'         => 'Dashboard GLPI Pro',
         'version'      => PLUGIN_DASHGLPI_VERSION,
-        'author'       => 'Diogo Berlanda e Guilherme Lima',
+        'author'       => 'Guilherme Lima',
         'license'      => 'GPLv3+',
-        'homepage'     => 'https://github.com/diberlanda95/dashglpi',
+        'homepage'     => 'https://github.com/GuilhermeGLS/dashglpi/tree/develop',
         'requirements' => [
             'glpi' => [
                 'min' => PLUGIN_DASHGLPI_MIN_GLPI_VERSION,
