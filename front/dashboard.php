@@ -83,9 +83,9 @@ if (empty($userInitials)) {
                 <i class="fas fa-ticket-alt"></i>
                 <span>Chamados</span>
             </a>
-            <a href="#" class="menu-link" onclick="showPage('assets', this)">
+            <!-- <a href="#" class="menu-link" onclick="showPage('assets', this)">
                 <i class="fas fa-microchip"></i>
-                <span>Ativos (Grid)</span>
+                <span>Ativos (Grid)</span> -->
             </a>
             <div style="flex: 1;"></div>
             <a href="<?php echo $CFG_GLPI['root_doc']; ?>/front/central.php" class="menu-link" title="Voltar ao GLPI">
@@ -408,7 +408,7 @@ if (empty($userInitials)) {
     </main>
 
     <!-- Cyberpunk Asset Modal -->
-    <div id="cyber-modal" class="cyber-overlay">
+    <!-- <div id="cyber-modal" class="cyber-overlay">
         <div class="cyber-hud">
             <button class="cyber-close" onclick="closeCyberModal()">
                 <i class="fas fa-times"></i>
@@ -468,7 +468,7 @@ if (empty($userInitials)) {
                 <span>SECURE CONNECTION ESTABLISHED // ACCESS GRANTED</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="<?php echo $pluginRoot; ?>/vendor/js/chart.umd.min.js"></script>
     <script src="<?php echo $pluginRoot; ?>/js/script.js"></script>
