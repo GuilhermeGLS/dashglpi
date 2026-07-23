@@ -132,10 +132,11 @@ function toggleTVMode() {
         stopTVRotation();
     }
 }
-
+// Retirei do modo tv o SLA e o Raking
+// const pages = ['dashboard', 'sla', 'ranking', 'assets']; 
 let tvRotationInterval;
 function startTVRotation() {
-    const pages = ['dashboard', 'sla', 'ranking', 'assets'];
+    const pages = ['dashboard', 'assets'];
     let currentIndex = 0;
 
     tvRotationInterval = setInterval(() => {
