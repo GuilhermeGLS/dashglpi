@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin DashGLPI - Dashboard avançado para GLPI
  *
@@ -40,19 +39,18 @@ function plugin_init_dashglpi()
 
     $PLUGIN_HOOKS['csrf_compliant']['dashglpi'] = true;
 
+    // IDs dos perfis que podem ver o menu do dashboard
+    $perfisPermitidos = [14, 4, 3]; // troca/adiciona os IDs que quiser aqui
+
     if (Session::getLoginUserID()) {
-        // Restringe o menu apenas ao perfil T.I (ID 14)
-        if (isset($_SESSION['glpiactiveprofile']['id']) && $_SESSION['glpiactiveprofile']['id'] == 14) {
+        $perfilAtivo = $_SESSION['glpiactiveprofile']['id'] ?? null;
+
+        if (in_array($perfilAtivo, $perfisPermitidos)) {
             // Menu
             $PLUGIN_HOOKS['redefine_menus']['dashglpi'] = 'plugin_dashglpi_redefine_menus';
             // JS mínimo: força o link do menu a abrir em nova aba
             $PLUGIN_HOOKS['add_javascript']['dashglpi'] = 'js/menu.js';
         }
-    }
-}
-
-        // JS mínimo: força o link do menu a abrir em nova aba
-        $PLUGIN_HOOKS['add_javascript']['dashglpi'] = 'js/menu.js';
     }
 }
 
