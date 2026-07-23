@@ -71,9 +71,9 @@ if (empty($userInitials)) {
                 <i class="fas fa-th-large"></i>
                 <span>Visão Geral</span>
             </a>
-            <a href="#" class="menu-link" onclick="showPage('sla', this)">
+            <!-- <a href="#" class="menu-link" onclick="showPage('sla', this)">
                 <i class="fas fa-clock"></i>
-                <span>Monitor SLA</span>
+                <span>Monitor SLA</span> -->
             </a>
             <a href="#" class="menu-link" onclick="showPage('ranking', this)">
                 <i class="fas fa-trophy"></i>
@@ -83,9 +83,9 @@ if (empty($userInitials)) {
                 <i class="fas fa-ticket-alt"></i>
                 <span>Chamados</span>
             </a>
-            <a href="#" class="menu-link" onclick="showPage('assets', this)">
+            <!-- <a href="#" class="menu-link" onclick="showPage('assets', this)">
                 <i class="fas fa-microchip"></i>
-                <span>Ativos (Grid)</span>
+                <span>Ativos (Grid)</span> -->
             </a>
             <div style="flex: 1;"></div>
             <a href="<?php echo $CFG_GLPI['root_doc']; ?>/front/central.php" class="menu-link" title="Voltar ao GLPI">
@@ -281,7 +281,7 @@ if (empty($userInitials)) {
         </div>
 
         <!-- SLA Section -->
-        <div class="page-section" id="slaSection">
+        <!-- <div class="page-section" id="slaSection">
             <header class="page-header">
                 <div class="page-title-wrapper">
                     <h1>Monitor de SLA</h1>
@@ -319,7 +319,7 @@ if (empty($userInitials)) {
                 <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; padding: 0 24px;">Chamados Próximos ao Vencimento</h3>
                 <div class="sla-widget" id="slaList" style="padding: 0 24px 24px;"></div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Ranking Section -->
         <div class="page-section" id="rankingSection">
@@ -408,7 +408,7 @@ if (empty($userInitials)) {
     </main>
 
     <!-- Cyberpunk Asset Modal -->
-    <div id="cyber-modal" class="cyber-overlay">
+    <!-- <div id="cyber-modal" class="cyber-overlay">
         <div class="cyber-hud">
             <button class="cyber-close" onclick="closeCyberModal()">
                 <i class="fas fa-times"></i>
@@ -468,7 +468,7 @@ if (empty($userInitials)) {
                 <span>SECURE CONNECTION ESTABLISHED // ACCESS GRANTED</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="<?php echo $pluginRoot; ?>/vendor/js/chart.umd.min.js"></script>
     <script src="<?php echo $pluginRoot; ?>/js/script.js"></script>

@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Plugin DashGLPI - Dashboard avançado para GLPI
  *
- * @author  Diogo Berlanda
+ * @author  Guilherme Lima
  * @license GPLv3+
  */
 
@@ -19,9 +18,9 @@ function plugin_version_dashglpi()
     return [
         'name'         => 'Dashboard GLPI Pro',
         'version'      => PLUGIN_DASHGLPI_VERSION,
-        'author'       => 'Diogo Berlanda',
+        'author'       => 'Guilherme Lima',
         'license'      => 'GPLv3+',
-        'homepage'     => 'https://github.com/diberlanda95/dashglpi',
+        'homepage'     => 'https://github.com/GuilhermeGLS/dashglpi/tree/develop',
         'requirements' => [
             'glpi' => [
                 'min' => PLUGIN_DASHGLPI_MIN_GLPI_VERSION,
@@ -40,12 +39,18 @@ function plugin_init_dashglpi()
 
     $PLUGIN_HOOKS['csrf_compliant']['dashglpi'] = true;
 
-    if (Session::getLoginUserID()) {
-        // Menu
-        $PLUGIN_HOOKS['redefine_menus']['dashglpi'] = 'plugin_dashglpi_redefine_menus';
+    // IDs dos perfis que podem ver o menu do dashboard
+    $perfisPermitidos = [14, 4, 3]; // troca/adiciona os IDs que quiser aqui
 
-        // JS mínimo: força o link do menu a abrir em nova aba
-        $PLUGIN_HOOKS['add_javascript']['dashglpi'] = 'js/menu.js';
+    if (Session::getLoginUserID()) {
+        $perfilAtivo = $_SESSION['glpiactiveprofile']['id'] ?? null;
+
+        if (in_array($perfilAtivo, $perfisPermitidos)) {
+            // Menu
+            $PLUGIN_HOOKS['redefine_menus']['dashglpi'] = 'plugin_dashglpi_redefine_menus';
+            // JS mínimo: força o link do menu a abrir em nova aba
+            $PLUGIN_HOOKS['add_javascript']['dashglpi'] = 'js/menu.js';
+        }
     }
 }
 
